@@ -1,73 +1,124 @@
 "use client";
-import Nav from "@/app/components/Nav";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
-export default function Home() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 2, // 1 second delay between each child
-        delayChildren: 0.3, // Initial delay before the first child appears
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: 40 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-  };
-
+export default function Portfolio() {
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className="space-y-16 w-full flex flex-col items-center justify-center" // Add some vertical spacing between elements
-    >
+    <div>
       <motion.div
-        variants={itemVariants}
-        className="w-full flex justify-center text-3xl"
+        initial={{ opacity: 0.0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+        className="border rounded bg bg-slate-50 shadow-md dark:bg-gray-950 w-full p-28"
       >
-        Hello There!
+        <div className="w-full flex flex-col space-y-2">
+          <span className="text-2xl">
+            &quot;Everything I&apos;ve done, I did with{" "}
+            <span className="font-bold border-b">Absolute Professionalism</span>
+            &quot;
+          </span>
+          <span>Here are some of my works which I can share with you</span>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0.0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+        className="border flex flex-col rounded bg bg-slate-50 shadow-md dark:bg-gray-950 w-full py-32 px-20 mt-5"
+      >
+        <span className="text-3xl w-full text-center mb-20">
+          Professional Projects
+        </span>
+        <div className="w-full grid grid-cols-2 gap-y-32 gap-x-40">
+          <div className="flex flex-col items-center justify-center">
+            <Link
+              href={"https://www.deventa.com.au/"}
+              className="text-3xl hover:text-blue-500 flex items-center"
+              target="_blank"
+            >
+              Deventa <ExternalLink className="w-3 h-3 ms-3" />
+            </Link>
+            <span className="text-center text-sm border-b pb-2 mb-2">
+              A subscription-based courseware site where team leaders create and
+              manage training courses for their team.
+            </span>
+            <span className="text-xs">NextJS / MongoDB</span>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <Link
+              href={"https://www.eucannajobs.com/"}
+              className="text-3xl hover:text-blue-500 flex items-center"
+              target="_blank"
+            >
+              EuCannaJobs <ExternalLink className="w-3 h-3 ms-3" />
+            </Link>
+            <span className="text-center text-sm border-b pb-2 mb-2">
+              A job portal for cannabis industry roles in Europe, connecting
+              employers with skilled professionals.
+            </span>
+            <span className="text-xs">AngularJS</span>
+          </div>{" "}
+          <div className="flex flex-col items-center justify-center">
+            <Link
+              href={"https://www.gwana.app/"}
+              className="text-3xl hover:text-blue-500 flex items-center"
+              target="_blank"
+            >
+              Gwana <ExternalLink className="w-3 h-3 ms-3" />
+            </Link>
+            <span className="text-center text-sm border-b pb-2 mb-2">
+              A platform for booking technicians online to repair and service
+              your gadgets.
+            </span>
+            <span className="text-xs">AngularJS / Flutter</span>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <Link
+              href={"https://www.thelifeguideproject.org/"}
+              className="text-3xl hover:text-blue-500 flex items-center"
+              target="_blank"
+            >
+              The Lifeguide Project <ExternalLink className="w-3 h-3 ms-3" />
+            </Link>
+
+            <span className="text-center text-sm border-b pb-2 mb-2">
+              A platform that sells business policies and recruits members to
+              sell and train others in policy sales.
+            </span>
+            <span className="text-xs">AngularJS</span>
+          </div>
+        </div>
       </motion.div>
       <motion.div
-        variants={itemVariants}
-        className="w-full flex justify-center text-3xl text-center"
+        initial={{ opacity: 0.0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+        className="border rounded bg bg-slate-50 shadow-md dark:bg-gray-950 w-full p-10 mt-5"
       >
-        I&apos;m Gregory! I am a Developer, and I&apos;m going to showcase my
-        skills through this portfolio!
-      </motion.div>
-      <motion.div
-        variants={itemVariants}
-        className="w-full flex justify-center text-3xl"
-      >
-        Let&apos;s Start!
-      </motion.div>
-      <motion.div
-        variants={itemVariants}
-        className="w-1/3 flex flex-col items-center justify-center border rounded bg bg-slate-50 dark:bg-gray-950 space-y-3 py-4"
-      >
-        <span className="text-xl">What do you want to see first?</span>
-        <Link href="/resume" className="hover:text-blue-500">
-          Resume {">"}
+        If you want demonstrations on projects other than web development, you
+        can visit my facebook page: {""}
+        <Link
+          href={"https://www.facebook.com/profile.php?id=61561140459216"}
+          target="_blank"
+          className="font-bold hover:text-blue-500"
+        >
+          TekniWorks
         </Link>
-        <Link href="/portfolio" className="hover:text-blue-500">
-          Portfolio {">"}
-        </Link>
-        <Link href="/about" className="hover:text-blue-500">
-          About Me {">"}
-        </Link>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }

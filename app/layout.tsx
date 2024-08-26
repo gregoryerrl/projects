@@ -8,8 +8,8 @@ import { AuroraBackground } from "./components/aurora-background";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Errl",
-  description: "Portfolio of Gregory Errl",
+  title: "Projects",
+  description: "Working Projects",
 };
 
 export default function RootLayout({
@@ -29,7 +29,6 @@ export default function RootLayout({
         >
           <div className="hidden md:block min-w-[100vw] min-h-screen overflow-x-hidden">
             <div className="flex flex-col z-50 absolute w-full px-6 py-4 min-h-screen space-y-5">
-              <Nav />
               <div className="min-h-[70vh] flex flex-col font-consolas">
                 {children}
               </div>
